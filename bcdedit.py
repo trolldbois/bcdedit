@@ -84,8 +84,8 @@ def print_name_el(h, node, prefix):
     obj_type = int(getname(c),16)
     name = bcdtypes.type_desc(obj_type)
     # get the object code ? first 4 bits
-    # code = bcdtypes.object_code_desc(obj_type)
-    code = el_to_bin(obj_type)
+    code = bcdtypes.object_code_desc(obj_type)
+    #code = el_to_bin(obj_type)
     print '%s\t%x %s %s%s'%(prefix, obj_type, code,  name,  dbg),
     vals = h.node_values(c)
     for v in vals:

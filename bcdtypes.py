@@ -164,7 +164,7 @@ def object_code_desc(i):
     
   
 # BCD.docx , page 9: Standard application Objects
-GUIDS = {
+GUIDS_APPLICATIONS = {
   '9dea862c-5cdd-4e70-acc1-f32b344d4795': ['Windows Boot Manager','{bootmgr}'],
   'a5a30fa2-3d06-4e9f-b5f4-a01df9d1fcba': ['Firmware Boot Manager','{fwbootmgr}'],
   'b2721d73-1db4-4c62-bf78-c548a880142d': ['Windows Memory Tester','{memdiag}'],
@@ -173,6 +173,20 @@ GUIDS = {
   'fa926493-6f1c-4193-a414-58f0b2456d1e': ['Current boot entry','{current}'],
   '': ['Default boot entry','{default}'],
 }
+
+
+GUIDS_INHERITABLE = {
+  '5189b25c-5558-4bf2-bca4-289b11bd29e2': '{badmemory}',
+  '6efb52bf-1766-41db-a6b3-0ee5eff72bd7': '{bootloadersettings}',
+  '4636856e-540f-4170-a130-a84776f4c654': '{dbgsettings}',
+  '0ce4991b-e6b3-4b16-b23c-5e0d9250e5d9': '{emssettings}',
+  '7ea2e1ac-2e61-4728-aaa3-896d9d0a9f0e': '{globalsettings}',
+  '1afa9c49-16ab-4a5c-901b-212802da9460': '{resumeloadersettings}',
+}
+
+GUIDS = dict()
+GUIDS.update(GUIDS_APPLICATIONS)
+GUIDS.update(GUIDS_INHERITABLE)
 
 def guid_desc(g):
   if g in GUIDS:
